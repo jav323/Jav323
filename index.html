@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACTIVIDAD 3-BLOG PERSONAL HTML+CSS+JS</title>
+    <link rel="stylesheet" type="text/css" href="blogPersonal.css">
+    <style>
+        .marquee {
+            overflow: hidden;
+            white-space: nowrap;
+            box-sizing: border-box;
+            animation: scroll-left 10s linear infinite;
+            font-size: 1.5em;
+            color: #ff4500;
+            background-color: #f0f0f0;
+            padding: 15px;
+            margin: 20px 0;
+            border: 2px solid #ff4500;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        @keyframes scroll-left {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        .imagenCentrada img {
+            transition: transform 0.3s ease;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 1em;
+            color: #555;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 1.1em;
+            margin: 5px;
+            cursor: pointer;
+        }
+    </style>
+    <script src="blogPersonal.js" defer></script>
+
+</head>
+<body>
+    <h1>JAVIER GONZALEZ ROMERO</h1>
+    <div class="marquee">Bienvenido a mi blog personal. ¡Espero que disfrutes leyendo y aprendiendo conmigo!</div>
+    <p id="descriptionParagraph">Me llamo Javier, tengo 35 años, estoy aprendiendo lenguaje de marcas. 
+      Estoy trabajando en el sector de la logística y el hardware pero 
+      siempre he estado ligado de algún modo a los ordenadores. Estoy deseando aprender todo lo que nos traiga este curso. 
+      Algunos de mis hobbies son la astronomía, el boxeo y los juegos de mesa. Espero que esta actividad me salga bien y me sirva para aprender y practicar más.
+      Nos vemos!.</p>
+
+    <button onclick="toggleParagraph()">Mostrar/Ocultar Descripción</button>
+
+    <div>
+        <label for="colorPicker">Selecciona el color del texto:</label>
+        <input type="color" id="colorPicker" onchange="changeTextColor()">
+    </div>
+
+    <button onclick="showCurrentTime()">Mostrar Hora Actual</button>
+
+    <table border="2">
+        <tr>
+            <th>TOP 3 SERIES FAVORITAS</th>
+            <th>TOP 3 PELÍCULAS FAVORITAS</th>
+        </tr>
+        <tr>
+            <td>One Piece</td>
+            <td>BIG</td>
+        </tr>
+        <tr>
+            <td>Madmen</td>
+            <td>The Green Book</td>
+        </tr>
+        <tr>
+            <td>Cosmos</td>
+            <td>Perfect Days</td>
+        </tr>
+    </table>
+
+    <div class="imagenCentrada">
+        <div>
+            <img id="img1" src="boxeo.avif" alt="Naoya Inoue">
+            <div class="titulo">Naoya Inoue: El ídolo de uno de mis hobbies</div>
+            <button onclick="resizeImage('img1', 1.1)">Aumentar tamaño</button>
+            <button onclick="resizeImage('img1', 0.9)">Disminuir tamaño</button>
+            <button onclick="rotateImage('img1')">Rotar</button>
+            <button onclick="incrementLike('like1')">Like</button> <span id="like1">0</span> likes
+        </div>
+
+        <div>
+            <img id="img2" src="big.jpg" alt="Portada de BIG">
+            <div class="titulo">"BIG": Una película que recuerdo con nostalgia</div>
+            <button onclick="resizeImage('img2', 1.1)">Aumentar tamaño</button>
+            <button onclick="resizeImage('img2', 0.9)">Disminuir tamaño</button>
+            <button onclick="rotateImage('img2')">Rotar</button>
+            <button onclick="incrementLike('like2')">Like</button> <span id="like2">0</span> likes
+        </div>
+    </div>
+
+    <form action="/my-handling-form-page" method="post">
+        <ul>
+            <li>
+                <label for="name">Nombre:</label>
+                <input type="text" id="name" name="user_name"/>
+            </li>
+            <li>
+                <label for="lang">Tu serie favorita</label>
+                <select name="Serie_favorita" id="lang">
+                    <option value="javascript">Breaking Bad</option>
+                    <option value="javascript">Juego de tronos</option>
+                    <option value="javascript">Friends</option>
+                    <option value="javascript">La que se avecina</option>     
+                    <option value="javascript">One Piece</option>
+                    <option value="javascript">Bleach</option>
+                    <option value="javascript">Mad Men</option>
+                    <option value="javascript">The Office</option>
+                </select>
+            </li>
+            <li>
+                <label for="msg">Comentario:</label>
+                <textarea id="msg" name="user_message" rows="10" cols="150" oninput="countWords()"></textarea>
+                <div id="wordCount">Palabras: 0</div>
+            </li>
+            <li class="button">
+                <button type="submit">Envíe su mensaje</button>
+            </li>
+        </ul>
+    </form>
+
+    <footer>
+        <div id="currentDate"></div>
+    </footer>
+</body>
+</html>

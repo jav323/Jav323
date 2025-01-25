@@ -1,0 +1,107 @@
+body {
+    background-color: lightgray;
+}
+
+h1 {
+    font-size: 48px;
+    text-align: center;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    color: darkslategray;
+}
+
+p {
+    font-size: 16px;
+    text-align: justify;
+    color: darkslategray;
+}
+
+table {
+    width: 100%;
+    text-align: center;
+    border: 2px solid black;
+    margin-bottom: 30px;
+}
+
+tr:nth-child(even) {
+    background-color: #e0f42f;
+}
+
+input, textarea, select {
+    border-radius: 20px;
+    background-color: lightcyan;
+}
+
+button {
+    background-color: lightcyan;
+}
+
+button:hover {
+    background-color: dodgerblue;
+    cursor: pointer;
+}
+
+li {
+    list-style: none;
+}
+
+.imagenCentrada {
+    display: flex; 
+    justify-content: space-around;
+    align-items: center;
+    text-align: center; 
+    margin-top: 40px;
+}
+
+.imagenCentrada img {
+    max-width: 100%;
+    height: auto; 
+    max-height: 300px;
+    margin-right: 20px;
+}
+.titulo {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 10px;
+    color: darkslategray;
+}
+
+form {
+    width: 60%; 
+    margin: 20px auto; 
+    text-align: left;
+}
+
+form ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+form li {
+    margin-bottom: 20px;
+}
+
+form label {
+    font-weight: bold;
+}
+
+form input, form textarea, form select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+form .button button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form .button button:hover {
+    background-color: #0056b3;
+}
